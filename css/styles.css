@@ -16,6 +16,9 @@
   /*  */
   --items: 3;
   --indent: 30px;
+
+  /* animation */
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ul {
@@ -118,6 +121,11 @@ body {
   margin-right: 50px;
 }
 
+.nav-item {
+  position: relative;
+  transition: color var(--animation);
+}
+
 .nav-item a:hover,
 .nav-item a:focus {
   color: var(--link-color);
@@ -138,6 +146,17 @@ body {
 
 .nav-link-current {
   color: #2196f3;
+}
+
+.nav-link-current::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--button-color);
 }
 
 /* header contacts */
@@ -217,6 +236,7 @@ body {
   text-align: center;
   color: var(--primary-white-color);
   cursor: pointer;
+  transition: background var(--animation);
 }
 
 .hero-button:hover,
@@ -300,6 +320,30 @@ body {
   margin-right: 30px;
 }
 
+.services-thumb {
+  position: relative;
+}
+
+.services-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+  background: rgba(47, 48, 58, 0.8);
+}
+
 /* section 4 - team */
 .team {
   background: var(--primary-background-color);
@@ -363,6 +407,7 @@ body {
   height: 44px;
   border-radius: 50%;
   color: var(--icons-color);
+  transition: background-color var(--animation), color var(--animation);
 }
 
 .team-social__link:hover,
@@ -396,6 +441,7 @@ body {
   color: var(--icons-color);
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: color var(--animation);
 }
 
 .clients-link:hover,
@@ -457,6 +503,10 @@ body {
   font-style: normal;
 }
 
+.address-item a {
+  transition: color var(--animation);
+}
+
 .address-item a:hover,
 .address-item a:focus {
   color: var(--link-color);
@@ -468,7 +518,7 @@ body {
   font-family: "Roboto";
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-white-color);
@@ -493,12 +543,12 @@ body {
   border-radius: 50%;
   color: var(--primary-white-color);
   background: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--animation);
 }
 
 .footer-social__link:hover,
 .footer-social__link:focus {
   background-color: var(--icons-bg-color);
-  color: var(--icons-hover-color);
 }
 
 .footer-social__icon {
@@ -533,6 +583,8 @@ body {
   letter-spacing: 0.03em;
   cursor: pointer;
   padding: 6px 22px;
+  transition: color var(--animation), background-color var(--animation),
+    box-shadow var(--animation);
 }
 
 .filter-button:hover,
@@ -553,6 +605,7 @@ body {
 }
 .portfolio-item {
   flex-basis: calc((100% - var(--indent) * (var(--items)-1)) / var(--items));
+  transition: background var(--animation), box-shadow var(--animation);
 }
 .portfolio-item:hover,
 .portfolio-item:focus {
@@ -566,10 +619,6 @@ body {
   overflow: hidden;
 }
 
-.portfolio-item:hover .overlay {
-  transform: translatey(0);
-}
-
 .overlay {
   position: absolute;
   top: 0;
@@ -579,7 +628,12 @@ body {
   background-color: rgba(33, 150, 243, 0.9);
 
   transform: translatey(100%);
-  transition: transform 250ms ease;
+  transition: transform var(--animation);
+}
+
+.portfolio-item:hover .overlay {
+  transform: translatey(0);
+  transition: transform var(--animation);
 }
 
 .overlay > p {
