@@ -263,6 +263,10 @@ body {
   gap: 30px;
 }
 
+.advantages-item {
+  max-width: 270px;
+}
+
 /* .advantages-item:not(:last-child) {
   margin-right: 30px;
 } */
@@ -271,7 +275,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 270px;
   height: 120px;
   background-color: #f5f4fa;
   border-radius: 4px;
