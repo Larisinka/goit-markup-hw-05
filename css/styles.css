@@ -14,11 +14,19 @@
   --icons-hover-color: #fff;
 
   /*  */
-  --items: 3;
+  --items: 4;
   --indent: 30px;
 
   /* animation */
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* reset */
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 
 ul {
@@ -55,6 +63,8 @@ img {
   height: auto;
 }
 
+/* BASE STYLES */
+
 /* Body */
 body {
   color: var(--text-color);
@@ -74,6 +84,18 @@ body {
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
+}
+
+/* cards set */
+
+.cards-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+
+.cards-set-item {
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 
 /* header for index.html and portfolio.html */
@@ -259,12 +281,7 @@ body {
 }
 
 .advantages-list {
-  display: flex;
-  gap: 30px;
-}
-
-.advantages-item {
-  max-width: 270px;
+  --items: 4;
 }
 
 /* .advantages-item:not(:last-child) {
@@ -316,11 +333,7 @@ body {
 }
 
 .services-list {
-  display: flex;
-}
-
-.services-item:not(:last-child) {
-  margin-right: 30px;
+  --items: 3;
 }
 
 .services-thumb {
@@ -364,10 +377,6 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-}
-
-.team-item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .team-wrap {
@@ -426,9 +435,8 @@ body {
 /* section 5 - our clients */
 
 .clients-list {
-  display: flex;
+  --items: 6;
   justify-content: center;
-  gap: 30px;
 }
 
 .clients-title {
@@ -607,7 +615,7 @@ body {
   gap: var(--indent);
 }
 .portfolio-item {
-  flex-basis: calc((100% - var(--indent) * (var(--items)-1)) / var(--items));
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
   background: var(--primary-white-color);
 }
 
@@ -705,7 +713,6 @@ body {
 
   width: 528px;
   height: 581px;
-  border-radius: 20px;
 
   background: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
