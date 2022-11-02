@@ -610,6 +610,7 @@ body {
 /* portfolio examples */
 
 .portfolio-examples {
+  --items: 3;
   display: flex;
   flex-wrap: wrap;
   gap: var(--indent);
