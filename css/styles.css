@@ -161,13 +161,9 @@ body {
   color: var(--text-color);
   transition: color var(--animation);
 }
-
+.nav-link-current,
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--link-color);
-}
-
-.nav-link-current {
   color: var(--link-color);
 }
 
@@ -228,11 +224,7 @@ body {
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+  background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/bg-img.jpg), var(--secondary-backgroung-color);
 }
 
@@ -333,6 +325,7 @@ body {
 .services.section {
   padding-top: 0;
 }
+
 .services-title,
 .team-title,
 .clients-title {
@@ -519,27 +512,18 @@ body {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  color: var(--primary-white-color);
-  text-decoration: none;
-  font-style: normal;
-}
-
-.address-link-email,
-.address-link-tel {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-style: normal;
+}
+.address-link.location {
+  color: var(--primary-white-color);
 }
 
-.address-item a {
+.address-link {
   transition: color var(--animation);
 }
 
-.address-item a:hover,
-.address-item a:focus {
+.address-link:hover,
+.address-link:focus {
   color: var(--link-color);
 }
 
@@ -676,7 +660,7 @@ body {
   transform: translatey(0);
 }
 
-.overlay > p {
+.overlay-description {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
